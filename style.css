@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 78px;
+  background-color: #11101d;
+  padding: 6px 14px;
+  transition: all 0.5s ease;
+}
+
+.active {
+  width: 240px;
+}
+
+.sidebar .logo-content .logo {
+  display: flex;
+  color: #fff;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.active .logo-content .logo {
+  opacity: 1;
+  pointer-events: none;
+
+}
+
+.logo-content .logo i {
+  font-size: 28px;
+  margin-right: 6px;
+}
+
+.logo-content .logo .logo-name {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.sidebar #btn {
+  position: absolute;
+  top: 6px;
+  left: 70%;
+  color: #fff;
+  align-items: center;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  transform: translateX(-50%);
+}
+
+.active #btn {
+  left: 90%;
+}
+
+.sidebar ul {
+  margin-top: 20px;
+}
+
+.sidebar ul li {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 0 5px;
+  line-height: 50px;
+}
+
+.sidebar ul li .tooltip {
+  display: block;
+  position: absolute;
+  left: 122px;
+  top: 0;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  background-color: #fff;
+  height: 35px;
+  width: 122px;
+  line-height: 30px;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.active ul li .tooltip  {
+  display: none;
+  pointer-events: auto;
+}
+
+.sidebar ul li:hover .tooltip {
+  transition: all 0.5s ease;
+  top: 50%;
+  opacity: 1;
+}
+
+.sidebar ul li input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  padding-left: 50px;
+  background-color: #1d1b31;
+  font-size: 18px;
+  color: #fff;
+}
+
+.sidebar ul li .bx-search {
+  position: absolute;
+  z-index: 999;
+  color: #fff;
+  font-size: 22px;
+  transition: all 0.5s ease;
+}
+
+.sidebar ul li .bx-search:hover {
+  color: #1d1b31;
+  background-color: #fff;
+}
+
+/* .sidebar ul li .bx-search:hover {
+  background-color: #11101d;
+
+} */
+
+.sidebar ul li a {
+  display: flex;
+  color: #fff;
+  align-items: center;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+}
+
+.sidebar ul li a:hover {
+  color: #11101d;
+  background-color: #fff;
+}
+
+.sidebar ul li i {
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.sidebar .links-name {
+  opacity: 0;
+  pointer-events: none;
+  transition: all .5s ease;
+}
+
+.active .links-name {
+  opacity: 1;
+}
+
+.sidebar .profile-content {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+}
+
+.sidebar .profile-content .profile {
+  position: relative;
+  padding: 10px 6px;
+  height: 60px;
+  background-color: #1d1b31;
+}
+
+.profile-content .profile .profile-detailes {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.active .profile .profile-detailes {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.profile .profile-detailes img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.profile .profile-detailes .name-job {
+  margin-left: 10px;
+}
+
+.profile .profile-detailes .name {
+  font-size: 12px;
+  font-weight: 400;
+  transition: all .5s ease;
+}
+
+.profile .profile-detailes .job {
+  font-size: 12px;
+  font-weight: 400;
+  transition: all .5s ease;
+}
+
+.profile #log-out {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  text-align: center;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  min-width: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  transition: all .5s ease;
+}
+
+.active .profile #log-out {
+  left: 88%;
+}
+
+.profile #log-out:hover {
+  color: #1d1b31;
+  background-color: #eee;
+}
+
+.home-content {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 78px);
+  left: 78px;
+  transition: all .5s ease;
+}
+
+.active ~ .home-content {
+  height: 100%;
+  width: calc(100% - 240px);
+  left: 240px;
+}
+
+.home-content .text {
+  font-size: 25px;
+  font-weight: 500;
+  color: #1d1b31;
+  margin-left: 10px;
+}
+
+
+
